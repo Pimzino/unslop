@@ -2,10 +2,12 @@
 
 Go through every group and note each sign you find with where it lives. Each line pairs the sign with its fix.
 
+The signs about glows, gradients, glass, colored shadows and looping motion are about the chrome and about effects spread over many elements. One effect inside the moment that passes the physical test in SKILL.md, Moment effects, is not a sign. A purple or hue to hue version never passes.
+
 ## Surfaces and color
 
 - Purple to blue or violet to pink gradients on backgrounds, cards, buttons or the active nav item → one neutral surface, accent only where it means something
-- Gradient text in headings, numbers or the logo → solid primary text color
+- Gradient text on a whole heading, on numbers or on the logo, or any hue to hue gradient text → solid primary text color. One word carrying a slow sheen of one material, like copper, is a moment effect, not this sign
 - Colored glows, like `shadow-[0_0_20px_rgba(139,92,246,0.5)]`, `drop-shadow` on emoji or glowing pills → remove, depth from surface steps and hairlines
 - Radial color washes or blurred blobs behind content → remove
 - Neon or high contrast colored borders → hairline at 6 to 10% opacity
@@ -88,6 +90,9 @@ Go through every group and note each sign you find with where it lives. Each lin
 - Everything flying in on load from different directions → one short fade and rise with a small stagger
 - Parallax, floating loops and elements that move on scroll → static layout
 - Animating width, height, top or left → transform and opacity
+- No `prefers-reduced-motion` handling while things loop or move on load → add it, loops stop on a still frame, entrances become fades
+- Sound that starts on its own → off until the visitor turns it on with a visible control
+- Something you can drag, shake or type on with no keyboard path and no hint → a key for it, shown as a keycap, and one plain line that says how to play
 
 ## Template look
 
@@ -97,6 +102,16 @@ These are not slop, but they are what a cleaned up screen falls back to when nob
 - A headline that would fit another product if you swapped the name → say what this product does, with its own nouns
 - A hero visual that is an empty box or a generic picture → a product preview in code or an image from the world
 - Every product getting the same layout, type and palette → let the direction choose
+
+## Unslop slop
+
+What an unslopped screen falls into when it copies the references instead of finding its own world.
+
+- Warm graphite page, cream text, a copper or amber accent and a glowing ember button on a product whose world is cold, green, bright or paper → go back to the world in the direction
+- Inter Tight with a slow copper sheen on one headline word on every product → the sheen is one product's moment, find this product's material
+- A cloud, fog or meadow scene behind every hero → a scene from this product's world, or no scene
+- A paper plane, lighthouse or prism as the hero object for a product that is not about flight, watching or light → find the object from this product, see living.md
+- A playful object on a dashboard or settings page → remove it, life there is a tweening number or a live status
 
 ---
 

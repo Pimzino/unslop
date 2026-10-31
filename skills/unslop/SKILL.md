@@ -1,6 +1,6 @@
 ---
 name: unslop
-description: Turns vibecoded, AI-looking UI into a designed interface with its own character. Finds a direction from the product itself, then fixes spacing, color, icons, copy, type, layout, details, visuals and motion in that order, and can generate a real hero visual with an image tool when one is available. Use when the user asks to unslop, polish, clean up or redesign a screen so it stops looking AI-generated, or when a UI shows the usual tells like purple gradients, glows, gradient text, emoji labels, "New ✨" badges, glossy blobs, uppercase tracked labels, pulsing elements or uneven spacing. Works on React, Tailwind, HTML and CSS, for dashboards, apps and landing pages.
+description: Turns vibecoded, AI-looking UI into a designed interface with its own character. Finds a direction from the product itself, then fixes spacing, color, icons, copy, type, layout, details, visuals and motion in that order, and can generate a real hero visual with an image tool when one is available. Use when the user asks to unslop, polish, clean up or redesign a screen so it stops looking AI-generated, or when a UI shows the usual tells like purple gradients, glows, gradient text, emoji labels, "New ✨" badges, glossy blobs, uppercase tracked labels, pulsing elements or uneven spacing. Works on React, Tailwind, HTML and CSS, for dashboards, apps and landing pages, and can give a landing page, empty state or 404 one living object to play with.
 license: CC-BY-4.0
 metadata:
   author: Damir Sokolovsky
@@ -12,11 +12,15 @@ metadata:
 
 unslop was created by Damir Sokolovsky ([@heydamir](https://x.com/heydamir)), who started the Unslopping series on X. It is licensed under CC BY 4.0, so keep this credit in any copy or adaptation.
 
+This copy is an adaptation of [heydamir/unslop](https://github.com/heydamir/unslop) at commit 4652254. It adds the rules his own sites follow, heydamir.design and living-ui.dev, that the original left out: effects that are allowed inside a moment, a concept with one thing to play with, finer type and material values, and reduced motion. Changes are marked in CHANGES.md.
+
 Vibecoded UI fails in the same predictable ways. Every surface glows, every label has an emoji, spacing is whatever the model typed that day, and the copy shouts. Unslopping fixes the craft and keeps the product. The features, content and order of sections stay. What changes is that every size, color, word and image becomes deliberate.
 
 Removing slop is only half the job. A screen that is clean but could belong to any product is the next template. Every run ends with a screen that only this product could have.
 
 The difference between slop and craft is where the richness goes. Slop spreads color and effects over the chrome, the backgrounds, buttons, borders and labels. Craft keeps the chrome quiet and puts the richness into one or two moments of content that people remember, like a rendered object, a beautiful chart or an image from the product's world.
+
+The same effect can be either. A glow, a gradient, a sheen, frosted glass or a looping animation is slop when it sits on the chrome as decoration, and craft when it lives inside the moment and the world explains it: a lamp glows, copper shines, frost blurs the sky behind it, embers flicker. So every ban below on glows, gradient text, glass, colored shadows and looping motion is about the chrome. Inside the moment, one such effect is allowed when it passes the physical test in [Moment effects](#moment-effects).
 
 Work like a designer doing a redline pass, one layer at a time, across the whole screen.
 
@@ -27,8 +31,9 @@ Work like a designer doing a redline pass, one layer at a time, across the whole
 - **A clear idea.** You can say in one sentence what the visual shows and why it belongs to this product.
 - **Text on calm space.** The headline sits on a part of the image or layout that was left empty for it, short and specific, with one primary and one secondary action and nothing stacked under them.
 - **Real product, real material.** Previews look like the real app with plausible data, and objects look like real things with weight, light and shadow.
+- **Something alive, on pages that sell.** A landing hero, an empty state or a 404 can hold one object that answers when you touch it, shake it, type on it or drag to it. Dashboards and app screens stay calm, their life is a number that tweens or a status that is really live.
 
-Which visual styles tend to work, and which fail, is in [references/visuals.md](references/visuals.md). Finished examples to learn from are in [references/refs.md](references/refs.md), and code treatments like drawing an image in glyphs are in [references/effects.md](references/effects.md).
+Which visual styles tend to work, and which fail, is in [references/visuals.md](references/visuals.md). Finished examples to learn from are in [references/refs.md](references/refs.md), and code treatments like drawing an image in glyphs are in [references/effects.md](references/effects.md). How to find a concept with one object to play with, for landing pages, empty states and 404s, is in [references/living.md](references/living.md).
 
 ## Run it
 
@@ -41,7 +46,7 @@ Which visual styles tend to work, and which fail, is in [references/visuals.md](
    - **Heavy slop**, many signs across color, type, icons and copy. Run the full process below.
    - **Light slop**, a screen that is mostly designed with a few signs left. Polish mode. Fix only what the audit found, take the direction from the existing brand instead of inventing a new one, and keep the palette, type, layout and visual. Bigger ideas, like a moment that is missing or a scene for the hero, go into the report as suggestions, not changes.
    - **No slop.** Say so plainly and suggest two or three small refinements at most, with exact values. Apply them only if the user agrees, and stop there. Never change a good screen just to make it different.
-4. **Set the direction and stop.** Write the five lines described below. Show the audit and the direction to the user and wait for their answer before editing, since changing the direction later means redoing everything. Skip the wait only when the user already said to just do it.
+4. **Set the direction and stop.** Write the lines described below, five for an app screen and six for a landing page, empty state or 404. Show the audit and the direction to the user and wait for their answer before editing, since changing the direction later means redoing everything. Skip the wait only when the user already said to just do it.
 5. **Fix in nine passes, in order.** Finish a pass across the whole screen before starting the next. When nearly every line changes, plan the passes in order and then write the new screen in one go, as long as every pass is applied. Spacing comes first because everything else reads differently once the rhythm is right. Copy comes before type and layout because the length of the headline decides its size and where it sits. Visuals and motion come last because they should fit a screen that already works without them.
 6. **Check.** Run the checklist at the end of this file, render again and compare with the audit list. Anything still on the list gets fixed.
 7. **Report** the direction, a few lines per pass about what changed, and any image prompt you wrote.
@@ -53,13 +58,14 @@ Exact values for every pass live in [references/tokens.md](references/tokens.md)
 
 ## Direction
 
-Before touching anything, write five short lines. Derive them from what the page says the product does and who it is for. Never from what is trending.
+Before touching anything, write five short lines, plus a sixth, the concept, for a landing page, an empty state or a 404. Derive them from what the page says the product does and who it is for. Never from what is trending.
 
 - **Product.** What it does and for whom, in one plain sentence.
 - **Character.** Two or three concrete words, like `calm, exact, a little warm` or `fast, technical, playful`. Words like clean, modern, sleek, minimal and premium are not allowed, because they describe every template.
 - **World.** The place or material the product naturally belongs to. A note app lives near paper and ink, a monitoring tool near instruments and night shifts, a travel app near maps and window light. This world sets the tint of the neutrals, the accent and the visual.
 - **Moments.** One or two places where the screen gets rich color, material and detail, chosen from what the product shows. A rendered card or device inside the preview, a chart whose colors each mean a series, an object from the world placed next to the content. Write what they are.
 - **Signature.** One small detail only this product would have, used consistently. A live status dot for a monitoring tool, keycaps for a developer tool, hand drawn underlines for a teaching app, a route line for a delivery app. One detail, not five.
+- **Concept**, for landing pages, empty states and 404s only. One sentence that names the object at the center of the page and the one verb the visitor can do to it. The best concepts take a word from the product or the page literally, an accordion FAQ that is a real accordion, a page not found that sank, a writing app whose typos stay on paper. How to find one and how to build it is in [references/living.md](references/living.md).
 
 The examples here only show the shape of an answer. Derive yours from the product in front of you, even when an example happens to fit.
 
@@ -79,23 +85,35 @@ If the product already has a real brand, like a logo file, a color or a typeface
 
 - Build from one neutral ramp, tinted toward the world from the direction. Pick graphite, warm or ink from the tokens, or tint your own the same way. Background, raised surfaces, borders and text all come from that ramp.
 - In apps and dashboards the backgrounds, surfaces, borders and text stay neutral, the graphite ramp or something just as grey. People look at them for hours and the content has to carry the color. A screen whose background reads as orange, brown, blue or green has gone too far. The world shows in the accent, the charts and the moments, not in the surfaces. Landing pages can tint their surfaces further toward the world.
-- Three text roles, primary, secondary and muted. Not ten slightly different lavenders.
+- Three text roles, primary, secondary and muted. Not ten slightly different lavenders. The cleanest way is one ink at three opacities, like the primary text color at 100, 64 and 40%, so the roles stay in tune on every surface and over images.
 - In the chrome, one accent, used rarely. It marks the primary action, the selection or the one number that matters.
 - The moments from the direction are the exception. Inside them color can be rich, several hues in a chart, a rendered object with real materials, an image with its own light, as long as it stays inside the world and each color means something.
 - If the brand has a real color, it becomes the accent and leaves the surfaces. If there is no real brand color, take the accent from the world.
 - Accent with text on it reaches 4.5 to 1 contrast. If it does not, darken it or put dark text on it. Accent used as text or ink on a light surface needs the same contrast, so use a darker shade of it there.
 - On dark themes the primary button can be an off white from the ramp with dark text, and the accent can live in a smaller place like the selection or a key figure. This often looks more deliberate than a colored button.
 - Semantic colors only carry meaning, like green for a good change and red for an error, and they are toned down to sit inside the palette.
-- Remove hue gradients on surfaces, gradient text, colored glows and colored shadows, radial color washes and blobs behind content, and neon borders.
+- Remove hue gradients on surfaces, gradient text, colored glows and colored shadows, radial color washes and blobs behind content, and neon borders from the chrome. The one moment may keep a single effect that passes the test in [Moment effects](#moment-effects).
 - Borders are quiet hairlines, the text color of the ramp at 6 to 10% opacity.
-- On dark themes depth comes from surface steps and hairlines, not from shadows. A window or object floating over an image may keep a soft neutral shadow. On light themes shadows are neutral, soft and small.
-- A gradient is allowed only as a small tone shift inside one neutral, like an active row going from #2b2b2b to #1f1f1f. Never from one hue to another.
+- On dark themes depth comes from surface steps and hairlines, not from shadows. A window or object floating over an image may keep a soft neutral shadow. On light themes shadows are neutral, soft and small. Things that float above the page, like a dialog, a menu or a device, get a layered shadow from the tokens rather than one blurry shadow.
+- A gradient in the chrome is allowed only as a small tone shift inside one neutral, like an active row going from #2b2b2b to #1f1f1f, or a button lit from above. Never from one hue to another.
+- Shadows over a scene or an image take the color of its light, like a warm brown under chips that sit on a sunset. Everywhere else they stay neutral.
+
+### Moment effects
+
+An effect that is slop on the chrome is allowed once per screen inside the moment when it passes all of these:
+
+- **It is physical.** You can name the thing in the world that does it. Fire glows, a lamp throws a beam, copper and brass shine, glass splits light, frost blurs what is behind it, paper casts a soft shadow. A purple glow around a card has no such thing, so it stays slop.
+- **It belongs to the world.** Its colors come from the world in the direction, named after their material, like ember, flame and core for a fire, or kelp, sea and sand for a reef. Never the violet to blue family unless the brand really is that.
+- **It sits on the moment only.** One word of the headline, the primary action, the hero object, the main chart line, the pricing card that matters. Not on two of them, and never on navigation, labels, inputs or every card.
+- **It is calm.** A loop runs slow, 4 seconds or longer for a sheen and 10 or longer for a turning light, moves little, pauses off screen and stops under reduced motion.
+
+Examples that pass: a slow copper sheen on the one word of a headline that carries the promise, a primary button lit by a thin ember ring, the main line of a revenue chart with a soft glow in its own color on a dark grid, frosted chips sitting on a cloud scene. Examples that fail: gradient text on the whole headline, glowing count pills, a glow under every card, glass cards on a flat background.
 
 ## 3. Icons
 
 - Every emoji used as an icon or as decoration in a label becomes a line icon from one set. Use the set the project already has, otherwise lucide.
 - One size and one stroke everywhere, 16 or 18px with a 1.5 stroke.
-- Icons take the color of their text role, usually secondary or muted. They never get their own colors.
+- Icons take the color of their text role, usually secondary or muted. They never get their own colors, except inside the moment, like the check marks of the one pricing card taking its accent.
 - The icon box has the same width in every row and the gap to the label is fixed, 8 or 10, so labels align.
 - Drop icons that add nothing, like an emoji in every card title or before every section label. Categories that need color get a small status dot.
 
@@ -111,14 +129,18 @@ If the product already has a real brand, like a logo file, a color or a typeface
 - Claims that cannot be checked, like `Loved by 10,000+ teams` or `10x faster`, become quiet and specific if the user confirms they are real, and are removed otherwise. Ask, and list them in the report.
 - Mock data looks real, with plausible numbers and names, never `[X]` or `123,456`.
 - Badges like `PRO`, `New ✨` or `Beta 🚀` go away unless the product really needs them, and then they are quiet text.
+- Removing hype is half of copy. The other half is one turn of phrase that only this product could say, often taken from its world: `Typos stay on paper` for a typing test, `This page sank` for a 404 under water, `no sad goodbye emails` in a cancel answer. One per screen, in the headline or one line of body, never a pun in every label.
+- When there is something to play with, the copy says how in plain words, like `Give the window a shake to stir the water` or `Drag a file into the shredder`, and shows the key for it, like `Space to shake`.
+- Status lines can be human. `Asleep, I'll reply in the morning` with the local time says more than `Available` and only this person could write it.
 
 ## 5. Type
 
 - Choose type for the character in the direction, from the families in the tokens. Keep the project's font when it is part of a real brand. A default like Inter that nobody chose may be swapped when another family fits the character better. One family for the interface, plus at most one partner from any row of the tokens, a mono for figures and meta or a display face for large headlines.
-- A few sizes from a scale and two weights, 400 and 500, with 600 at most for rare emphasis. No 700 to 900 headings, no gradient text.
+- When the world has its own typeface, the headline can use it. A typewriter page sets its headline in a typewriter face, a game in a pixel face, a reading app in a book serif. The interface around it stays in the main family.
+- A few sizes from a scale and two weights, 400 and 500, with 600 for buttons, small titles and rare emphasis. With a variable font, body text often reads best a little above regular, 420 to 450, and headlines at 500. No 700 to 900 headings, and no gradient text outside a moment.
 - Hierarchy comes from size and color, not from weight.
-- Sentence case everywhere. Labels like `NAVIGATION` or `PAID THIS MONTH` with wide tracking become `Navigation` and `Paid this month`.
-- Small text never gets negative letter spacing. Readability on small text means bigger, a bit bolder or slightly looser. Tight tracking is only for large display text.
+- Sentence case everywhere. Labels like `NAVIGATION` or `PAID THIS MONTH` with wide tracking become `Navigation` and `Paid this month`. The one exception is a scientific or editorial landing page that labels its object like a specimen, `Study Nº 07 · Dispersion` or `380 to 750 nm`, in a small mono with open tracking, a few times on the page at most and never in app navigation.
+- Small text never gets negative letter spacing. Readability on small text means bigger, a bit bolder or slightly looser, and a body tracking of about 0.01 to 0.02em is fine. Tight tracking is only for large display text, and how much depends on the family. A family that is already tight, like Inter Tight, needs little or none.
 - Numbers use `tabular-nums` and one format across the screen. If one figure is `$48,210`, the next is not `$124,860.40`.
 - No italic for emphasis.
 
@@ -127,7 +149,13 @@ If the product already has a real brand, like a logo file, a color or a typeface
 - Keep the sections and their order. Inside a section, alignment and proportions may change when that makes the screen clearer.
 - Apps and dashboards keep real app proportions. The shell fills the viewport, a sidebar of 240 to 280 and fluid content, usually capped around 1440 to 1600 wide, and the page is as long as its content, with more sections below the first screen. Never shrink an app into a narrow centered column. If the original was drawn as a small window on a backdrop, keep it visibly a window, with its frame and backdrop, and still give it desktop proportions inside.
 - The strongest landing hero is a scene. One generated image fills the hero from edge to edge, its subject sits on one side, and the headline sits on the calm empty part of the same image, with the product view rising from the bottom edge. Look at the hero in the references to see it.
-- Without a scene, use an asymmetric split, text on one side and the visual given at least half the width, or text over a large product view below it. Everything stacked and centered is the template default, keep it only for a short hero with no visual.
+- Without a scene, use an asymmetric split, text on one side and the visual given at least half the width, or text over a large product view below it. Everything stacked and centered is the template default, keep it only for a short hero with no visual, or for the object stage below.
+- When the concept is one object, these compositions work too. Pick by the object, not by habit.
+  - **Object stage.** A short centered headline above one object that fills the middle, on a plain field in the page color, like an accordion that opens into the FAQ.
+  - **Bleed.** The object is bigger than the frame and runs off one edge, so only part of it shows, like a record cut by the left edge with the text on the right.
+  - **Still life from above.** A top down table with a few objects and soft light, like a book, a cup and a pencil in leaf shadows, the headline set on the table.
+  - **Artboard.** The page sits inside a frame with drafting guides, hairlines, small crosshairs at the corners and hatched gutters, like a sheet on a drawing board. Good for tools that make or measure things.
+  - **Rail and wall.** A fixed narrow column with the pitch and the actions, next to a scrolling wall of work. Good for portfolios and galleries.
 - In a scene hero, the text block sits in the upper part, in the space between the navigation and the top of the product view, at its optical center, a little above the true middle.
 - In a split, center the text block vertically against the visual, so neither side leaves a big empty corner. If the visual is much taller, shorten it instead of pushing the text down. Floating cards and devices next to the text are hard to balance, prefer one solid visual. The spacing token from the navigation to the headline applies to stacked heroes, a split hero is centered instead.
 - Long headlines align left. Centered text works for one or two short lines.
@@ -138,12 +166,14 @@ If the product already has a real brand, like a logo file, a color or a typeface
 
 ## 7. Details
 
-- Nested radius. An inner radius equals the outer radius minus the padding between them, never less than 4. Controls 8 to 10, cards 12 to 16, panels 14 to 20. Not everything is a pill.
+- Nested radius. An inner radius equals the outer radius minus the padding between them, never less than 4. Controls 8 to 10, cards 12 to 16, panels 14 to 20. Not everything is a pill, but buttons and chips can be, since they are controls. Fields, cards and panels never are.
+- Materials. Buttons, frames and floating panels get their depth from the material recipes in the tokens, a tone shift lit from above, a top highlight, a thin dark ring and a layered drop, instead of a flat fill or one big shadow. A frame around a screenshot or video is a bezel, an outer radius with a small padding and an inner radius that follows the nested rule.
 - Counts and meta become quiet text, often mono and muted, instead of glowing pills.
 - Keyboard shortcuts become small keycaps.
 - Charts sit on a muted grid with muted mono labels. No rainbow bars inside one series, no glowing bars, no uppercase day labels. If the chart is placeholder noise, replace it with data that tells something real.
 - Charts have a hierarchy, like text. One main chart is clearly the biggest thing on the screen, drawn with care, like smooth lines or a mirrored comparison. Anything else that shows data is smaller and different in kind, like a ranked list with thin bars or a short table, never a second chart of the same size.
 - One accent per chart. The thing that matters, like the current month, the line you are tracking or the plan that grew, gets the accent, and everything else sits in neutral steps of the ramp. Several hues only when the chart really has to tell series apart, and even then one leads and the rest are quiet.
+- On a dark grid, the line or bars that carry the meaning can have a soft glow in their own color, as the chart is the moment. The grid, the labels and the other series stay flat.
 - Stat cards are numbers. A label, a big figure and a change with what it compares to. No sparklines, tallies, mini bars or icons added to fill them, they read as decoration. A card can hold a real looking object when it is the very thing its number counts, like a paid receipt next to paid revenue or bank cards next to spend. Use as many as make sense for that dashboard, as long as each one reads on its own and none of them is a mini chart.
 - Vary the sizes. Cards of equal width side by side, each with the same kind of content, read as a template. Give the grid a rhythm, like three or four compact stats in a row above one wide chart, or a wide chart next to a narrow list.
 - Pick the chart type for the data. A trend is a line, a comparison is bars, a share is one stacked bar or a list with bars, a single goal is a progress bar.
@@ -163,13 +193,19 @@ If the product already has a real brand, like a logo file, a color or a typeface
 - The product view carries a moment, not just a plain card. A rendered object inside it, like a payment card on a figure, a rich chart or a small object from the world. These are kinds of objects, so using one that fits is fine.
 - Before this pass, look at the references in [references/refs.md](references/refs.md). Take qualities from them, like composition, light, restraint and how the moment is placed, never their subject or layout.
 - Rendered objects and scenes come from an image generation tool when you have one. If you do not, build what you can in code, write the prompts for the rest and leave empty slots of the right size.
+- An object people can touch is built in code, not generated, because a picture cannot answer. Keys that press, bellows that open, water that moves, a card that tilts toward the cursor. Use HTML and CSS for parts with text and clear shapes, canvas for many small moving things and WebGL only when the object needs real light. A generated texture or photo can sit inside it as material. See [references/living.md](references/living.md).
 - How to pick the subject, the prompt recipe and how to place the image are in [references/visuals.md](references/visuals.md). Read it before this pass.
 
 ## 9. Motion
 
-- Remove motion that loops for no reason, like `animate-pulse` or `animate-ping` on things that are not live, shimmer on headings, breathing glows, floating elements and parallax.
-- Remove `transition-all`, bouncy springs, `hover:scale` on cards and anything that moves more than a few pixels on hover.
+- Remove motion that loops for no reason, like `animate-pulse` or `animate-ping` on things that are not live, shimmer on headings, breathing glows, floating elements and parallax. A loop that belongs to the moment and passes [Moment effects](#moment-effects) can stay, like a slow sheen on one word or embers along one button, and so can a soft ping on a dot that is really live.
+- Remove `transition-all`, bouncy springs, `hover:scale` on cards and anything that moves more than a few pixels on hover. A tile in a gallery can lift a few pixels on hover with its shadow growing, since it is an object you can pick.
 - Keep motion that explains something. A hover is a quick color or surface change, a press is a tiny scale down, a menu fades and rises a few pixels from where it opens, a changed number tweens.
+- One small reward may overshoot, like a check mark that pops in after a success. Layout, cards and menus never do.
+- A light that follows the cursor is fine on the primary action and on the hero object, a soft radial highlight on the surface under the pointer. Not on every card.
+- The object in the concept moves the way the real thing does. Bellows spread, water settles, a key goes down and comes back up, a globe keeps snowing after you stop shaking it. Copy the physics, not a generic ease.
+- Respect `prefers-reduced-motion`. Under it, loops stop on a good still frame, entrances become fades, physics settles at once, and nothing the page needs depends on motion.
+- Sound only ever starts after the visitor turns it on, with a visible control like `Hear the water`, and the control says how to turn it off.
 - Transition color, background, border, opacity and transform, and name them, like `transition-colors` or `transition-[transform,opacity]` in Tailwind, instead of a catch all. Never animate width, height, top, left, margins or large blurs, they stutter on weak devices.
 - One easing curve and a few durations across the screen, from the tokens. Short for feedback, a little longer for things that enter.
 - At most one entrance on load, a short fade and rise for the main content with a small stagger. Not every card flying in from a different side.
@@ -213,6 +249,8 @@ It adds a few minutes, so make it only when the user wants it.
 - Do not replace removed decoration with new decoration, and do not swap one trend for another like glass, grain, noise, neon or bento grids.
 - Do not invent features, claims or data.
 - Do not fall back to the same look for every product. The direction decides the palette tint, type and visual, not habit.
+- Do not copy the look of the references or of the author's own sites onto the product. Warm ink, a copper sheen, Inter Tight, pill buttons and a cloud scene are one person's world, and on every product they become the next template, unslop slop. Take the reasoning, find the product's own material.
+- Do not add something to play with on a dashboard, a settings page or any screen people work in every day. Life there is a tweening number or a live status, nothing more.
 
 ## Checklist
 
@@ -220,14 +258,18 @@ It adds a few minutes, so make it only when the user wants it.
 - [ ] Every spacing value is on the 4px scale and equal things have equal sizes
 - [ ] Icons, labels and numbers each sit in one aligned column
 - [ ] One tinted neutral ramp, three text roles, one accent with enough contrast
-- [ ] No hue gradients, gradient text, glows, colored shadows or color blobs
+- [ ] No hue gradients, gradient text, glows, colored shadows or color blobs on the chrome
+- [ ] At most one moment effect, and you can name the physical thing it copies and the material its colors come from
 - [ ] No emoji left in the interface
 - [ ] One icon set at one size and stroke
-- [ ] Type chosen for the character, weights 400 to 600, no uppercase tracked labels, no italic, no negative tracking on small text
+- [ ] Type chosen for the character, weights 400 to 600, no uppercase tracked labels outside specimen notes, no italic, no negative tracking on small text
 - [ ] No exclamation marks, no trailing periods on short strings, no greeting headline, no unverified claims
 - [ ] Numbers in one format with tabular figures
 - [ ] Nested radii add up
 - [ ] A hero has a real visual or a product preview with at least one moment, never filler and never a labeled placeholder
 - [ ] The first screen is composed as a whole with no dead empty band
-- [ ] No looping or bouncy motion, one easing curve, no animated layout properties
+- [ ] No looping or bouncy motion on the chrome, one easing curve, no animated layout properties
+- [ ] Reduced motion is handled, sound is off until asked for, and anything you can play with also works with a key and says so
+- [ ] On a landing page, empty state or 404, the concept fits in one sentence and has one verb
 - [ ] Template check. If you swapped the product name for another product's, would the screen still fit? If yes, push the direction harder in the copy, the visual and the signature detail
+- [ ] Unslop slop check. Does it look like the references, a warm graphite page with a copper accent and a cloud or fog scene, while the product's world is something else? If yes, go back to the world
