@@ -27,6 +27,10 @@ The aim is to close the gap between what the skill tells Claude and what Damir's
 - signs.md: glow and gradient signs scoped to the chrome, three accessibility signs in Motion, a new Unslop slop group.
 - refs.md: where the images and the rules differ, and a Living concepts table that links to the live pages.
 
+## README.md
+
+- Marks the repo as a fork, installs from the `improvements` branch, adds update and claude.ai steps, a section on what this branch adds and how to keep up with the original.
+
 ## Not changed
 
 The nine passes and their order, the audit and polish modes, the story video and its scripts, effects.md, visuals.md and the examples.
